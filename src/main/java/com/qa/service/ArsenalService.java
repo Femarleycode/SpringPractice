@@ -29,7 +29,7 @@ public class ArsenalService {
         return this.repo.save(update);
     }
 
-    public boolean deleteNote(Long id){
+    public boolean deleteArsenal(Long id){
         if(!this.repo.existsById(id)){
             throw new ArsenalNotFoundException();
         }

@@ -3,10 +3,7 @@ package com.qa.rest;
 import com.qa.domain.Arsenal;
 import com.qa.service.ArsenalService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,5 +20,12 @@ public class ArsenalController {
 
     @PostMapping("/createArsenal")
     public Arsenal createArsenal(@RequestBody Arsenal arsenal) { return this.service.createArsenal(arsenal); }
+
+    @DeleteMapping("/deleteArsenal/{id}")
+    public boolean deleteArsenal(@PathVariable Long id) { return this.service.deleteArsenal(id); }
+
+    @GetMapping("/getArsenalById/{id}")
+    public Arsenal getArsenalById(@PathVariable Long id) { return this.service.findArsenalById(id); }
+
 
 }
