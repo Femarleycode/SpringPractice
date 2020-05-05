@@ -1,9 +1,6 @@
 package com.qa.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
@@ -14,6 +11,9 @@ public class Arsenal {
     private Long id;
     private String pName;
     private String pPosition;
+
+    @ManyToOne(targetEntity = PremierLeague.class)
+    private PremierLeague premierLeague;
 
     public Long getId() {
         return id;
